@@ -21,6 +21,5 @@ int main(){
         display();
         str = trim(str);
         char dummy[MAX];
-        // printf("%s\n", dummy);
     }
 }
