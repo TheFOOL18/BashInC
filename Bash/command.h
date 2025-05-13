@@ -3,6 +3,8 @@
 
 #include "basic.h"
 
+void execute_command(char* command);
+
 void process_command(char* command, int type);
 
 #endif
