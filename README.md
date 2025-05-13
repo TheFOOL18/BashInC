@@ -8,6 +8,10 @@ make
 ```
 ## Available Commands (Case sensitive)
 
+### &
+
+Use this to run the preceding command in the background
+
 ### clear
 
 Use this function to clear everything currently on the terminal;
