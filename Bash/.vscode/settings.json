@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "split_command.h": "c",
-        "sstream": "c"
-    }
-}
