@@ -1,5 +1,5 @@
 all:
-	gcc main.c basic.c display.c -o a.out
+	gcc main.c basic.c display.c split_command.c command.c -o a.out
 
 clean:
 	rm -f a.out

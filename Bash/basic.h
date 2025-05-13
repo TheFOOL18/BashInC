@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/utsname.h>
+#include <sys/wait.h>
 
 #define BLK "\e[1;30m"
 #define RED "\e[1;31m"
@@ -18,6 +19,7 @@
 #define MGN "\e[1;34m"
 #define PINK "\e[1;35m"
 #define BLU "\e[1;36m"
+#define WHT "\e[1;37m"
 #define ESC "\e[0m"
 
 #define MAX 1024

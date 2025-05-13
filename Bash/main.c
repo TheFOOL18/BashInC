@@ -1,9 +1,12 @@
 #include "basic.h"
 #include "display.h"
+#include "split_command.h"
 
 int main(){
+    printf(WHT"\t\t\t\t\t\tStarting BashInC...\n"ESC);
     while(true){
         char* str = (char*)malloc(MAX);
+        display();
         int i = 0;
         while(i < MAX - 1){
             scanf("%c", &str[i]);
@@ -13,13 +16,7 @@ int main(){
             }
             i++;
         }
-        if(strcmp(str, "exit") == 0){
-            free(str);
-            break;
-        }
-
-        display();
-        str = trim(str);
-        char dummy[MAX];
+        split_command(str);
     }
+    return 0;
 }

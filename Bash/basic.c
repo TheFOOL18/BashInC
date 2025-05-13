@@ -1,15 +1,22 @@
 #include "basic.h"
 
-char* trim(char* str){
-    int len = strlen(str);
-    char* end = str + len - 1;
-    int idx = 0;
-    while(idx < len && (str[idx] == ' ' || str[idx] == '\t')){
+char* trim(char* str) {
+    if (str == NULL)
+        return str;
+    
+    while (*str == ' ' || *str == '\t')
         str++;
-    }
-    while(end > str &&(end[idx] == ' ' || end[idx] == '\t' )){
+
+    char* output = (char*)malloc(strlen(str) + 1);
+    strcpy(output, str);
+
+    if (*output == '\0')
+        return output;
+
+    char* end = output + strlen(output) - 1;
+    while (end > output && (*end == ' ' || *end == '\t'))
         end--;
-    }
-    end[1] = '\0';
-    return str;
+
+    *(end + 1) = '\0';
+    return output;
 }
