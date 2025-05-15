@@ -3,7 +3,7 @@
 #include "split_command.h"
 
 int main(){
-    printf(WHT"\t\t\t\t\t\t\tStarting BashInC...\n"ESC);
+    printf(WHT"\t\t\t\t\t\tStarting BashInC...\n"ESC);
     while(true){
         char* str = (char*)malloc(MAX);
         display();

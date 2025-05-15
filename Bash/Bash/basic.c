@@ -1,7 +1,5 @@
 #include "basic.h"
 
-char* previous_directory = NULL;
-
 char* trim(char* str) {
     if (str == NULL)
         return str;

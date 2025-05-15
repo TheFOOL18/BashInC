@@ -1,6 +1,6 @@
 #include "display.h"
 
-char* trim_path(){
+char* get_path(){
     char *path = (char*)malloc(MAX);
     char* tilda = (char*)malloc(MAX);
     getcwd(path, MAX);
@@ -20,7 +20,7 @@ void display(){
     printf(GRN"%s@%s"ESC, getlogin(), host);
     printf(":");
 
-    printf(MGN"%s"ESC, trim_path());
+    printf(MGN"%s"ESC, get_path());
     printf("$ ");
     free(host);
 }

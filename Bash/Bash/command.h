@@ -2,7 +2,6 @@
 #define COMMAND_H   
 
 #include "basic.h"
-#include "hop.h"
 
 int execute_command(char* command);
 

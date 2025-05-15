@@ -24,8 +24,6 @@
 
 #define MAX 1024
 
-extern char* previous_directory;
-
 char* trim(char* str);
 
 #endif

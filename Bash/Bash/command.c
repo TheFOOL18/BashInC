@@ -2,7 +2,7 @@
 
 int execute_command(char* command){
     if(strcmp(command, "exit") == 0){
-        printf(WHT"\t\t\t\t\t\t\tExiting BashInC...\n"ESC);
+        printf(WHT"\t\t\t\t\t\tExiting BashInC...\n"ESC);
         exit(0);
     }
 
@@ -10,13 +10,6 @@ int execute_command(char* command){
         system("clear");
     }
 
-    else if(strncmp(command, "hop", 3) == 0){
-        if(command[3] != '\0' && command[3] != ' '){
-            return 0;
-        }
-        process_hop(command);
-    }
-    
     else
         return 0;
 
@@ -24,17 +17,14 @@ int execute_command(char* command){
 }
 
 void process_command(char* command, int type){
-    char* command_copy = strdup(command);
-    char* start = command_copy;
-    
-    if(strlen(command_copy) == 0)
+    if(strlen(command) == 0)
         return;
 
     if(type == 0){
     // foreground command
-        if(execute_command(command_copy) == 0){
+        if(execute_command(command) == 0){
             char* arg[MAX];
-            char* token = strtok(command_copy, " ");
+            char* token = strtok(command, " ");
             int i = 0;
             while(token != NULL){
                 arg[i] = token;
@@ -46,8 +36,7 @@ void process_command(char* command, int type){
             pid_t pid = fork();
             if(pid == 0){
                 if(execvp(arg[0], arg) == -1){
-                    printf(RED"%s: command not found\n"ESC, arg[0]);
-                    exit(0);
+                    printf("%s: command not found\n", arg[0]);
                 }
             }
             else{
@@ -60,10 +49,10 @@ void process_command(char* command, int type){
     // background command
         pid_t pid = fork();
         if(pid == 0){
-            printf("%s with pid: %d called\n", command_copy, getpid());
-            if(execute_command(command_copy) == 0){
+            printf("%s with pid: %d called\n", command, getpid());
+            if(execute_command(command) == 0){
                 char* arg[MAX];
-                char* token = strtok(command_copy, " ");
+                char* token = strtok(command, " ");
                 int i = 0;
                 while(token != NULL){
                     arg[i] = token;
@@ -74,11 +63,11 @@ void process_command(char* command, int type){
 
                 if(execvp(arg[0], arg) == -1){
                     printf("%s: command not found\n", arg[0]);
-                    exit(1);
                 }
             }
         }
+        else{
+            fflush(stdout);
+        }
     }
-    fflush(stdout);
-    free(start);
 }

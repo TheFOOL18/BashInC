@@ -3,7 +3,7 @@
 
 #include "basic.h"
 
-char* trim_path();
+char* get_path();
 
 void display();
 
