@@ -1,7 +1,8 @@
 #include "command.h"
 
-int execute_command(char* command){
+int execute_command(char* command, queue* q){
     if(strcmp(command, "exit") == 0){
+        free_queue(q);
         printf(WHT"\t\t\t\t\t\t\tExiting BashInC...\n"ESC);
         exit(0);
     }
@@ -30,7 +31,7 @@ int execute_command(char* command){
     return 1;
 }
 
-void process_command(char* command, int type){
+void process_command(char* command, queue* q, int type){
     char* command_copy = strdup(command);
     char* start = command_copy;
     
@@ -39,7 +40,7 @@ void process_command(char* command, int type){
 
     if(type == 0){
     // foreground command
-        if(execute_command(command_copy) == 0){
+        if(execute_command(command_copy, q) == 0){
             char* arg[MAX];
             char* token = strtok(command_copy, " ");
             int i = 0;
@@ -68,7 +69,7 @@ void process_command(char* command, int type){
         pid_t pid = fork();
         if(pid == 0){
             printf("%s with pid: %d called\n", command_copy, getpid());
-            if(execute_command(command_copy) == 0){
+            if(execute_command(command_copy, q) == 0){
                 char* arg[MAX];
                 char* token = strtok(command_copy, " ");
                 int i = 0;

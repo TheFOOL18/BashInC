@@ -4,9 +4,10 @@
 #include "basic.h"
 #include "hop.h"
 #include "reveal.h"
+#include "queue.h"
 
-int execute_command(char* command);
+int execute_command(char* command, queue* q);
 
-void process_command(char* command, int type);
+void process_command(char* command, queue*q, int type);
 
 #endif

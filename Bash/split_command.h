@@ -4,6 +4,6 @@
 #include "basic.h"
 #include "command.h"
 
-void split_command(char*);
+void split_command(char* command, queue* q);
 
 #endif
