@@ -3,6 +3,7 @@
 
 #include "basic.h"
 #include "hop.h"
+#include "reveal.h"
 
 int execute_command(char* command);
 

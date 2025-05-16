@@ -3,7 +3,8 @@
 
 #include "basic.h"
 
-void hop(char* directory);
+int hop(char* directory, int flag); // flag 1 to print cwd and 0 to not print
+
 
 void process_hop(char* command);
 #endif

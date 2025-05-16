@@ -16,6 +16,13 @@ int execute_command(char* command){
         }
         process_hop(command);
     }
+
+    else if(strncmp(command, "reveal", 6) == 0){
+        if(command[6] != '\0' && command[6] != ' '){
+            return 0;
+        }
+        process_reveal(command);
+    }    
     
     else
         return 0;

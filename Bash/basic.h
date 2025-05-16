@@ -9,8 +9,14 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <dirent.h>
+#include <pwd.h>
+#include <grp.h>
+#include <time.h>
 #include <sys/utsname.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #define BLK "\e[1;30m"
 #define RED "\e[1;31m"

@@ -33,3 +33,11 @@ hop test ..
 The only requirement being that the directories are space separeated.
 
 It also supports the ***".", "..", "~", "-"*** flags.
+
+`'.' flag prints the currect directory path`.
+
+`'..' flag prints the parent directory path`.
+
+`'~' flag prints the home directory path`.
+
+`'-' flag prints the previous directory path if it exists`.
