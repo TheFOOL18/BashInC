@@ -74,6 +74,18 @@ No directories can also be given, in which case the information about the presen
 
 ---
 ### `log`
-history equivalent of BachInC. It supports the 
+history equivalent of BachInC. It supports the following commands.
 
----
+```bash
+log
+log purge
+log execute <index>
+```
+'log' command prints the last 15 commands taken by the system in oldest to latest order.
+
+'log purge' command clears the log.
+
+'log execute \<i>' executes the i'th recent command.
+It returns an error if either i exceeds the number of commands stored or if i is less than 1.
+
+**No log execute \<i> will be stored in history and any valid log or log purge command is also not stored in history.**
