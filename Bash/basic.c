@@ -2,6 +2,7 @@
 
 char* previous_directory = NULL;
 char* log_path = NULL;
+char* queue_command = NULL;
 
 char* trim(char* str) {
     if (str == NULL)

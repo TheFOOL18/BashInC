@@ -1,5 +1,0 @@
-reveal ../..
-reveal -la ../..
-exit
-clear
-exit

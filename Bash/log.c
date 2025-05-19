@@ -83,8 +83,9 @@ void process_log(char* command, queue* q){
         else if(execute){
             if(next == NULL){
                 int idx = atoi(token);
-                if(idx > q->size-1){
+                if(idx > q->size){
                     printf(RED"error: execute index out of bounds!\n"ESC);
+                    q = pop(q);
                     return;
                 }
                 q = pop(q);

@@ -32,6 +32,7 @@
 
 extern char* previous_directory;
 extern char* log_path;
+extern char* queue_command;
 
 char* trim(char* str);
 
