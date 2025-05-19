@@ -89,3 +89,5 @@ log execute <index>
 It returns an error if either i exceeds the number of commands stored or if i is less than 1.
 
 **No log execute \<i> will be stored in history and any valid log or log purge command is also not stored in history.**
+
+---
