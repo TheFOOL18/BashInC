@@ -1,6 +1,7 @@
 #include "basic.h"
 
 char* previous_directory = NULL;
+char* log_path = NULL;
 
 char* trim(char* str) {
     if (str == NULL)

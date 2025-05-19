@@ -31,6 +31,7 @@
 #define MAX 1024
 
 extern char* previous_directory;
+extern char* log_path;
 
 char* trim(char* str);
 

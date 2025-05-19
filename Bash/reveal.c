@@ -126,7 +126,7 @@ void process_reveal(char* command){
                     flags[1] = 1;
 
                 else{
-                    printf(RED"Invalid Flag!\n"ESC);
+                    printf(RED"Invalid flag!\n"ESC);
                     return ;
                 }
             }

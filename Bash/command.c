@@ -8,7 +8,8 @@ int execute_command(char* command, queue* q){
     }
 
     else if(strcmp(command, "clear") == 0){
-        system("clear");
+        printf("\033[H\033[J");
+        fflush(stdout);
     }
 
     else if(strncmp(command, "hop", 3) == 0){
@@ -25,6 +26,13 @@ int execute_command(char* command, queue* q){
         process_reveal(command);
     }    
     
+    else if(strncmp(command, "log", 3) == 0){
+        if(command[3] != '\0' && command[3] != ' '){
+            return 0;
+        }
+        process_log(command, q);
+    }    
+
     else
         return 0;
 

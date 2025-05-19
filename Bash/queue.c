@@ -22,15 +22,23 @@ queue* enqueue(queue* q, char* command){
         }
         strcpy(q->commands[QUEUE_SIZE-1], command);
     }
+    write_log(q);
+    return q;
+}
 
+queue* pop(queue* q){
+    strcpy(q->commands[q->size-1], "\0");
+    q->size --;
+    write_log(q);
     return q;
 }
 
 queue* clear_queue(queue* q){
     for(int i=0;i<QUEUE_SIZE;i++){
-        strcpy(q->commands[i], "c");
+        strcpy(q->commands[i], "\0");
     }
     q->size = 0;
+    write_log(q);
     return q;
 }
 
@@ -44,4 +52,5 @@ void free_queue(queue* q){
     for(int i=0;i<QUEUE_SIZE;i++){
         free(q->commands[i]);
     }
+    free(q);
 }
