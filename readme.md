@@ -73,3 +73,7 @@ The following are examples of some valid flags.
 No directories can also be given, in which case the information about the present directory will be displayed.
 
 ---
+### `log`
+history equivalent of BachInC. It supports the 
+
+---
